@@ -9,28 +9,26 @@
 package hello;
 
 // Class dependencies.
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
 
 /**
- * @RestController Annotation:
- * Types that carry this annotation are 
- * treated as controllers where @RequestMapping 
- * methods assume @ResponseBody semantics 
+ * @Controller Annotation:
+ * Indicates that an annotated class 
+ * is a "Controller" (e.g. a web controller). 
  * by default.
  */
-@RestController
+@Controller
 public class GreetingController {
 
     /**
-     * @RequestMapping Annotation:
-     * Annotation for mapping web requests onto 
-     * methods in request-handling classes with 
-     * flexible method signatures
+     * @GetMapping Annotation:
+     * Annotation for mapping HTTP GET 
+     * requests onto specific handler methods.
      */
-    @RequestMapping("/greeting")
+    @GetMapping("/greeting")
 
     /**
      * @RequestParams Annotation:
